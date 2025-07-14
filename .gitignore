@@ -1,0 +1,30 @@
+# Byte-compiled Emacs Lisp files
+*.elc
+
+# Eldev cache directory
+.eldev/
+
+# Emacs backup files (ending with ~)
+*~
+
+# Emacs lock files (e.g. #filename#)
+#*#
+
+# Auto-save files
+.#*
+
+# Projectile project cache
+.projectile
+
+# Other editor swap/undo files (Vim, etc.)
+*.swp
+*.swo
+
+# Logs, if any
+*.log
+
+# Test coverage reports (if you generate them)
+coverage/
+
+# Ignore local config overrides (if any)
+.eldevrc

@@ -1,0 +1,102 @@
+* Tabbed Perspectives Mode
+
+/Maintain separate tab-bar configurations for each perspective in Emacs./
+
+** Overview
+
+Tabbed Perspectives Mode extends the functionality of perspective.el by saving and restoring individual tab-bar configurations for each perspective. This allows you to maintain separate tab workspaces that align with your perspective contexts.
+
+** Features
+
+- *Per-perspective tab layouts*: Each perspective maintains its own set of tabs
+- *Persistent tabs*: Tab configurations are saved and restored when switching perspectives
+- *Automatic handling*: Tab layouts are saved when creating, switching or killing perspectives
+- *Seamless integration* with perspective.el and tab-bar.el
+
+** Installation
+
+*** MELPA
+
+Not yet available on MELPA.
+
+*** Manual Installation
+
+1. Clone this repository:
+   #+begin_src bash
+   git clone https://github.com/mschloesser/tabbed-perspectives-mode.git
+   #+end_src
+
+2. Add the following to your Emacs configuration:
+   #+begin_src elisp
+   (add-to-list 'load-path "/path/to/tabbed-perspectives-mode")
+   (require 'tabbed-perspectives-mode)
+   (tabbed-perspectives-mode 1)
+   #+end_src
+
+** Requirements
+
+- Emacs 27.1 or later
+- perspective.el
+- tab-bar.el (included in Emacs 27+)
+
+** Usage
+
+1. Enable perspective-mode
+2. Enable tabbed-perspectives-mode
+3. Enable tab-bar-mode if you want the tab bar to be visible
+
+#+begin_src elisp
+(use-package perspective
+  :ensure t
+  :config
+  (perspective-mode))
+
+(use-package tabbed-perspectives-mode
+  :after perspective
+  :config
+  (tabbed-perspectives-mode 1))
+
+;; Optional: enable tab-bar-mode to make tabs visible
+(tab-bar-mode 1)
+#+end_src
+
+*** Commands
+
+- =M-x tabbed-perspectives-mode= - Toggle the mode on/off
+- =M-x tpersp-reset-tab-bar= - Reset the tab bar for the current perspective
+
+** Configuration
+
+#+begin_src elisp
+;; Customize where tab configurations are stored
+(setq tpersp-storage-directory (locate-user-emacs-file "my-tabs-directory/"))
+#+end_src
+
+** How it works
+
+When you switch between perspectives, Tabbed Perspectives Mode:
+
+1. Saves the current perspective's tab configuration to disk
+2. Loads the target perspective's tab configuration from disk
+3. Updates the tab-bar UI to reflect the loaded configuration
+
+This creates the experience of having separate tab workspaces for each perspective.
+
+** Troubleshooting
+
+If your tab configuration becomes corrupted:
+
+1. Use =M-x tpersp-reset-tab-bar= to reset the tabs for the current perspective
+2. Restart Emacs if issues persist
+
+** Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+** License
+
+GPL-3.0-or-later
+
+---
+
+/Note: This package works with tab-bar functionality but doesn't automatically enable tab-bar-mode. You'll need to manually enable it with =M-x tab-bar-mode= if you want the tab bar to be visible.
