@@ -35,7 +35,7 @@
 
   (cond
    ;; Only allow enabling if perspective-mode is active
-   ((and tabbed-perspectives-mode (not (bound-and-true-p perspective-mode)))
+   ((and tabbed-perspectives-mode (not (bound-and-true-p persp-mode)))
     (message "tabbed-perspectives-mode requires perspective-mode to be active")
     (setq tabbed-perspectives-mode nil))
    
