@@ -6,9 +6,10 @@
 
 Tabbed Perspectives Mode extends the functionality of perspective.el by saving and restoring individual tab-bar configurations for each perspective. This allows you to maintain separate tab workspaces that align with your perspective contexts.
 
-#+begin_note
+#+begin_quote
+[!NOTE]
 Currently, the tab configs are only stored for the Emacs session. Once Emacs is closed, the configs are gone.
-#+end_note
+#+end_quote
 
 ** Features
 
@@ -102,6 +103,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 GPL-3.0-or-later
 
 ---
-#+begin_note
+#+begin_quote
+[!NOTE]
 This package works with tab-bar functionality but doesn't automatically enable tab-bar-mode. You'll need to manually enable it with =M-x tab-bar-mode= if you want the tab bar to be visible.
-#+end_note
+#+end_quote
