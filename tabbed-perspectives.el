@@ -7,7 +7,7 @@
 ;; Version: 0.1
 ;; Package-Requires: ((emacs "27.1") (perspective "20250523.1316"))
 ;; Keywords: perspective extension tabs tab-bar
-;; Homepage: https://github.com/mschloesser/tabbed-perspectives-mode
+;; Homepage: https://github.com/mschloesser/tabbed-perspectives
 ;; SPDX-License-Identifier: GPL-3.0-or-later
 
 ;; This file is not part of GNU Emacs.
