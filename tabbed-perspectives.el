@@ -175,6 +175,6 @@ Emacs objects with safe representations."
 
 (tpersp-setup)
 
-(provide 'tabbed-perspectives-mode)
+(provide 'tabbed-perspectives)
 
 ;;; tabbed-perspectives-mode.el ends here
